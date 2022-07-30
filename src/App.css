@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+
+/* Component: Slider */
+.slider{
+  background-color: white;
+  opacity: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Component: NavBar */
+.navActive{
+  color: white;
+  text-decoration: none;
+  margin: 7px 20px  ;
+}
+.navInactive{
+  color: rgb(112, 112, 112);
+  text-decoration: none;
+  margin: 7px 20px  ;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Componen:ListCategories */
+.ListCategories {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  margin: 0px 50px 50px 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Component:ListProduct */
+.listProduct{
+  display: flex;
+  justify-content: center;
+  flex-direction:row;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+.cardProduct {
+  margin: 5px;
+  display: flex;
+  text-align: center ;
+
+}
+
+/* Component: Footer */
+.footer{
+  display: flex;
+  padding: 30px;
+  margin-top: 30px;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  font-size: small;
+}
+
+li {
+  cursor: pointer;
+}
+
+/* Pages:Categories */
+.categories {
+  margin: 50px 5px 5px 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction:row;
+  flex-wrap: wrap;
+}
+
+/* Pages:Login */
+.Login {
+  display: flex;
+  flex-direction: column ;
+  justify-content: center;
+  align-items:flex-start;  
+  padding-left: 150px;
+  height: 600px;
+  background-image: url('./image/zal.png');
+}
+
+/* Pages:Register */
+.Register {
+  display: flex;
+  flex-direction: column ;
+  justify-content: center;
+  align-items:flex-start;  
+  padding-left: 150px;
+  height: 600px;
+  background-image: url('./image/zal.png');
+}
+
+/* Pages: Not Found */
+.notFound{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 500px;
+  margin: 100px;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* Pages: DetailProduct: PopUP */
+.popup {
+  /* background-color: rgb(225, 220, 220); */
+  margin: 5px;
+  padding: 3px;
 }
