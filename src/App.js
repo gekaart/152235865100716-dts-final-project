@@ -8,7 +8,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Categories from "./pages/Categories";
-import DetailProduct from "./pages/DetailProduct";
+import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import { auth, logouthandle } from "./config/ApiFirebase";
@@ -48,6 +48,7 @@ function App() {
         credential.password
       );
       setCredential({ email: "", password: "" });
+      navigate("/");
       console.log(user);
       return res;
     } catch (error) {
@@ -87,6 +88,7 @@ function App() {
         credential.password
       );
       setCredential({ email: "", password: "" });
+      navigate("/");
       return res;
     } catch (error) {
       switch (error.code) {
@@ -115,7 +117,7 @@ function App() {
       return;
     }
     if (user) {
-      navigate("/");
+      return;
     }
     if (error) {
       console.log(error);
@@ -143,8 +145,8 @@ function App() {
           }
         />
         <Route
-          path="/detailproduct/:id"
-          element={<DetailProduct cart={cart} setCart={setCart} />}
+          path="/cart"
+          element={<Cart cart={cart} logout={logout} user={user} />}
         />
         <Route
           path="/register"
@@ -156,6 +158,7 @@ function App() {
               credential={credential}
               emailError={emailError}
               passwordError={passwordError}
+              user={user}
             />
           }
         />
@@ -169,6 +172,7 @@ function App() {
               credential={credential}
               emailError={emailError}
               passwordError={passwordError}
+              user={user}
             />
           }
         />

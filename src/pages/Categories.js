@@ -38,23 +38,6 @@ const Categories = ({ cart, setCart, logout, user }) => {
     fetchData();
   }, [params]);
 
-  // let navigate = useNavigate();
-  // const onclickDetailHandle = (id) => {
-  //   if (user) {
-  //     navigate("/detailproduct/:" + id);
-  //   } else {
-  //     navigate("/login");
-  //   }
-  // };
-
-  // const buyNowHandle = (product) => {
-  //   if (user) {
-  //     setCart([...cart, product.id]);
-  //   } else {
-  //     navigate("/login");
-  //   }
-  // };
-
   return (
     <>
       <Navigation cart={cart} logout={logout} user={user} />
@@ -64,6 +47,7 @@ const Categories = ({ cart, setCart, logout, user }) => {
       <div className="listProduct">
         {productByCategories.map((product) => (
           <ListProduct
+            key={product.id}
             product={product}
             cart={cart}
             setCart={setCart}

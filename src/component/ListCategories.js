@@ -21,10 +21,6 @@ const ListCategories = () => {
     fetchData();
   }, []);
 
-  //   const onclickCateogries = (id) => {
-  //     navigate("/categories/" + id);
-  //   };
-
   return (
     <>
       <h3

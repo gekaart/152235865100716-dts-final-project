@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
       <div className="footer">
-        <div style={{ width: "40%" }}>
+        <div style={{ width: "50%" }}>
           <h3>My Shop</h3>
           <p>
             As the Online Fashion Center in Asia, we create endless style
@@ -13,7 +13,7 @@ const Footer = () => {
             Shop, You Own Now.
           </p>
         </div>
-        <div style={{ width: "20%" }}>
+        <div style={{ width: "30%" }}>
           <h4>Services</h4>
           <ul>
             <li>help</li>
@@ -24,7 +24,7 @@ const Footer = () => {
             <li>Status Order</li>
           </ul>
         </div>
-        <div style={{ width: "20%" }}>
+        <div style={{ width: "30%" }}>
           <h4>About Us</h4>
           <ul>
             <li>Promotion your brand</li>
@@ -57,7 +57,7 @@ const Footer = () => {
           paddingBottom: "10px",
         }}
       >
-        MyShop created with Love @2022
+        MyShop created with Proud @2022
       </div>
     </>
   );

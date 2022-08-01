@@ -54,6 +54,7 @@
 
 li {
   cursor: pointer;
+  margin-right: 15px;
 }
 
 /* Pages:Categories */
@@ -92,14 +93,47 @@ li {
   display: flex;
   flex-direction: column;
   width: 500px;
-  margin: 100px;
+
 }
 
 
 
 /* Pages: DetailProduct: PopUP */
 .popup {
-  /* background-color: rgb(225, 220, 220); */
+  background-color: rgb(225, 220, 220);
   margin: 5px;
   padding: 3px;
 }
+
+.detailProductBody{
+  margin-top: 20px;
+  display: flex;
+
+}
+
+.detailProductImage{
+  margin: 10px;
+  padding: 20px;
+  width: 40%;
+}
+
+.descriptionProduct{
+  margin: 10px;
+}
+
+.detailFooter{
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+/* Pages: Cart */
+.Cart {
+  margin: 100px 20px 50px 30px;
+}
+
+.cartItems {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+

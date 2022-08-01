@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, Badge, NavDropdown } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Instance from "../config/ApiProducts";
@@ -66,6 +66,30 @@ const Navigation = ({ cart, logout, user }) => {
             </NavLink>
           ) : (
             <>
+              {user.email === "admin@gmail.com" ? (
+                <NavDropdown
+                  id="nav-dropdown-dark-example"
+                  title={user.email.split("@")[0]}
+                  menuVariant="dark"
+                >
+                  <NavDropdown.Item href="/addProducts">
+                    Add Products
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/addCategories">
+                    Add Categories
+                  </NavDropdown.Item>
+                </NavDropdown>
+              ) : (
+                <b
+                  style={{
+                    color: "white",
+                    marginTop: "10px",
+                    cursor: "pointer",
+                  }}
+                >
+                  {user.email.split("@")[0]}
+                </b>
+              )}
               <NavLink
                 to="/cart"
                 className={({ isActive }) =>
@@ -74,17 +98,9 @@ const Navigation = ({ cart, logout, user }) => {
               >
                 <FontAwesomeIcon icon={faShoppingBasket} />
                 {cart.length ? (
-                  <span
-                    style={{
-                      borderRadius: "100%",
-                      color: "white",
-                      backgroundColor: "red",
-                      padding: "1px",
-                      fontSize: "12px",
-                    }}
-                  >
+                  <Badge pill bg="danger">
                     {cart.length}
-                  </span>
+                  </Badge>
                 ) : (
                   ""
                 )}
