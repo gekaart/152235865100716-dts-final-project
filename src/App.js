@@ -17,6 +17,9 @@ import {
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 import "reactjs-popup/dist/index.css";
+import AddProducts from "./pages/AddProducts";
+import AddCategories from "./pages/AddCategories";
+import Search from "./pages/Search";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -174,6 +177,34 @@ function App() {
               passwordError={passwordError}
               user={user}
             />
+          }
+        />
+        <Route
+          path="/addProducts"
+          element={
+            <AddProducts
+              cart={cart}
+              setCart={setCart}
+              logout={logout}
+              user={user}
+            />
+          }
+        />
+        <Route
+          path="/addCategories"
+          element={
+            <AddCategories
+              cart={cart}
+              setCart={setCart}
+              logout={logout}
+              user={user}
+            />
+          }
+        />
+        <Route
+          path="/search"
+          element={
+            <Search cart={cart} setCart={setCart} logout={logout} user={user} />
           }
         />
         <Route path="*" element={<NotFound />} />

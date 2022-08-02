@@ -7,10 +7,40 @@ const Footer = () => {
         <div style={{ width: "50%" }}>
           <h3>My Shop</h3>
           <p>
-            As the Online Fashion Center in Asia, we create endless style
-            possibilities by expanding our product range, from international
-            products to coveted local products. We make you the center. With My
-            Shop, You Own Now.
+            MyShop was created using React JS as a final training project
+            organized by{" "}
+            <a
+              style={{ textDecoration: "none" }}
+              variant="link"
+              rel="noreferrer"
+              target="_blank"
+              href="https://digitalent.kominfo.go.id/"
+            >
+              digitalent
+            </a>{" "}
+            The product data used is dummy data obtained from the rest API{" "}
+            <a
+              style={{ textDecoration: "none" }}
+              variant="link"
+              rel="noreferrer"
+              target="_blank"
+              href="https://fakeapi.platzi.com/"
+            >
+              platzi.com
+            </a>{" "}
+            which is also used by other developers simultaneously. The UI
+            display used is inspired by the{" "}
+            <a
+              style={{ textDecoration: "none" }}
+              variant="link"
+              rel="noreferrer"
+              target="_blank"
+              href="https://zalora.co.id/"
+            >
+              ZALORA Indonesia
+            </a>{" "}
+            website which has been modified as needed. Therefore some features
+            and pages cannot be used properly. Thank you for visiting MyShop!!!
           </p>
         </div>
         <div style={{ width: "30%" }}>
@@ -57,7 +87,7 @@ const Footer = () => {
           paddingBottom: "10px",
         }}
       >
-        MyShop created with Proud @2022
+        MyShop created with Proud by Geka Arissta @2022
       </div>
     </>
   );

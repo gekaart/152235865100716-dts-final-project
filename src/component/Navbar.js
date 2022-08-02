@@ -8,6 +8,7 @@ import {
   faShoppingBasket,
   faRightFromBracket,
   faRightToBracket,
+  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Navigation = ({ cart, logout, user }) => {
@@ -16,8 +17,9 @@ const Navigation = ({ cart, logout, user }) => {
     const fetchData = async () => {
       try {
         const Res = await Instance.get("categories");
-        // console.log(Res.data);
-        setCategories(Res.data);
+        const Cat = Res.data.filter((e) => e.id < 6);
+        // console.log(categories);
+        setCategories(Cat);
       } catch (error) {
         console.log(error);
       }
@@ -90,6 +92,14 @@ const Navigation = ({ cart, logout, user }) => {
                   {user.email.split("@")[0]}
                 </b>
               )}
+              <NavLink
+                to="/search"
+                className={({ isActive }) =>
+                  isActive ? "navActive" : "navInactive"
+                }
+              >
+                <FontAwesomeIcon icon={faSearch} />
+              </NavLink>
               <NavLink
                 to="/cart"
                 className={({ isActive }) =>
