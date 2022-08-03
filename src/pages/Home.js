@@ -53,8 +53,6 @@ const Home = ({ cart, setCart, logout, user }) => {
     return res;
   };
 
-  // mengatur search
-
   return (
     <div className="Home">
       <Navigation cart={cart} logout={logout} user={user} />

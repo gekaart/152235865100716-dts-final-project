@@ -137,3 +137,19 @@ li {
   align-content: space-between;
 }
 
+/* Pages:AddProduct */
+.AddProduct {
+  margin: 100px 30px 30px 30px
+}
+
+.ProductTable {
+  margin-top: 30px;
+}
+
+.FormInput {
+  width: 60%;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  
+  
+}
