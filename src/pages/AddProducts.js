@@ -342,7 +342,17 @@ const AddProducts = ({ cart, logout, user }) => {
                 className="float-end mt-2"
                 variant="secondary"
                 size="sm"
-                onClick={() => setShowForm("False")}
+                onClick={() => {
+                  setShowForm("False");
+                  setInputData({
+                    id: "",
+                    title: "",
+                    category: { id: "", name: "", image: "" },
+                    description: "",
+                    price: "",
+                    images: [],
+                  });
+                }}
               >
                 Cancel
               </Button>
