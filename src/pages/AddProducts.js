@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "../component/Navbar";
-import { Table, Form, Button, Row, Col } from "react-bootstrap";
 import Instance from "../config/ApiProducts";
 import Paginate from "../component/Pagination";
+import { Table, Form, Button, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
@@ -119,6 +119,18 @@ const AddProducts = ({ cart, logout, user }) => {
     }
   };
 
+  const deleteHandle = async (id) => {
+    try {
+      const response = await Instance.delete("products/" + id);
+      setFlag(true);
+      console.log(id);
+      console.log(response);
+      setFlag(!flag);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const submitHandle = () => {
     if (showForm === "Update") {
       // console.log(inputData);
@@ -147,7 +159,6 @@ const AddProducts = ({ cart, logout, user }) => {
     }
     console.log(showForm);
   };
-
   const addHandle = () => {
     setShowForm("Submit");
   };
@@ -406,7 +417,11 @@ const AddProducts = ({ cart, logout, user }) => {
                       title="Edit"
                       icon={faEdit}
                     />{" "}
-                    <FontAwesomeIcon title="Delete" icon={faTrash} />
+                    <FontAwesomeIcon
+                      onClick={() => deleteHandle(product.id)}
+                      title="Delete"
+                      icon={faTrash}
+                    />
                   </td>
                 </tr>
               ))}
